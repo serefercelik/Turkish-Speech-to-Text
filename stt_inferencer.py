@@ -52,27 +52,18 @@ class QuartznetInferencer():
             dist_sync_on_step=True,
         )
 
-
     def inference(self):
 
         files = [self.inference_file_location]
         # prediction here is in the form ["some string"]
         prediction = self._onnx_prediction(files)
         print("STT prediction:{}".format(prediction))
-
         prediction = [[(-1.0, prediction[0])]]
-
         del files
-
         return prediction
 
     def _onnx_prediction(self, files, return_logits_only=False):
-        """
-        Makes a prediction using onnx model.
-        :Return: list of strings if return_logits_only is False, else logits
-        """
 
-        # try:
         with tempfile.TemporaryDirectory() as dataloader_tmpdir:
             with open(os.path.join(dataloader_tmpdir, 'manifest.json'), 'w') as fp:
                 for audio_file in files:
@@ -100,8 +91,6 @@ class QuartznetInferencer():
         prediction = self.wer.ctc_decoder_predictions_tensor(a)
 
         return prediction
-
-
 inference_file = "test_files/test0.wav"
 
 quartznet_inferencer = QuartznetInferencer(inference_file)
