@@ -15,4 +15,12 @@ Turkish labels were configured in `configs/quartznet5x5.yaml` in the following f
 labels: &labels [" ", "a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", "i", "j", "k", "l", "m",
          "n", "o", "ö", "p", "q", "r", "s", "ş", "t", "u", "ü", "v", "w", "x", "y", "z", "'"]
 ```
-
+#### Training
+Run the following command:
+```
+python fine_tune.py
+```
+#### Load and Export onnx model to Inference
+```
+export_model.ipynb
+```
