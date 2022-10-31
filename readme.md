@@ -24,7 +24,7 @@ python fine_tune.py
 ```
 export_model.ipynb
 ```
-#### Deploy model and make STT inference
+#### Deploy model and make inference
 Run the following command:
 ```
 stt_inferencer.py
