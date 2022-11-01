@@ -20,7 +20,7 @@ import wave
 class QuartznetInferencer():
     def __init__(self, inference_file):
 
-        self.stt_config_path = "configs/quartznet5x5.yaml"
+        self.stt_config_path = "configs/quartznet15x5.yaml"
 
         self.inference_file_location = inference_file
 
