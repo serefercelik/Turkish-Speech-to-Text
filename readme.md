@@ -11,6 +11,9 @@ The `audio_filepath` field should provide an absolute path to the `.wav` file co
 #### Download Free Audio Data for ASR
 You can download and create `manifest.jsonl` from some of the common publically available speech dataset in **Turkish** and some **other languages** from my reporisitory [speech-datasets-for-ASR](https://github.com/Rumeysakeskin/speech-datasets-for-ASR).
 
+#### Speech Data Augmentation
+Also, you can use my repository [
+speech-data-augmentation](https://github.com/Rumeysakeskin/speech-data-augmentation) to **increase the diversity** of your dataset augmenting the data artificially for ASR models training.
 
 #### Preprocessing
 - [QuartzNet 15x5 model config file](https://catalog.ngc.nvidia.com/orgs/nvidia/models/quartznet_15x5_ls_sp/files) was used that trained only on LibriSpeech.
