@@ -9,8 +9,7 @@ Each line of the manifest `(data/train_manifest.jsonl and data/val_manifest.json
 The `audio_filepath` field should provide an absolute path to the `.wav` file corresponding to the utterance. The `text` field should contain the full transcript for the utterance, and the `duration` field should reflect the duration of the utterance in seconds.
 
 #### Download Free Audio Data for ASR
-You can download and create `manifest.jsonl` from some of the common publically available speech dataset in Turkish and some other languages from my [reporisitory. 
-speech-datasets-for-ASR](https://github.com/Rumeysakeskin/speech-datasets-for-ASR) for ASR.
+You can download and create `manifest.jsonl` from some of the common publically available speech dataset in Turkish and some other languages from my reporisitory [speech-datasets-for-ASR](https://github.com/Rumeysakeskin/speech-datasets-for-ASR).
 
 
 #### Preprocessing
