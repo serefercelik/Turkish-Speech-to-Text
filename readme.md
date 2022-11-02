@@ -8,6 +8,10 @@ Each line of the manifest `(data/train_manifest.jsonl and data/val_manifest.json
 ```
 The `audio_filepath` field should provide an absolute path to the `.wav` file corresponding to the utterance. The `text` field should contain the full transcript for the utterance, and the `duration` field should reflect the duration of the utterance in seconds.
 
+### Download Free Audio Data for ASR
+You can download and create `manifest.jsonl` from some of the common publically available [Turkish audio dataset](https://github.com/Rumeysakeskin/speech-datasets-for-ASR) for ASR.
+
+
 #### Preprocessing
 - [QuartzNet 15x5 model config file](https://catalog.ngc.nvidia.com/orgs/nvidia/models/quartznet_15x5_ls_sp/files) was used that trained only on LibriSpeech.
 Turkish labels were configured in `configs/quartznet15x5.yaml` in the following format:
