@@ -13,7 +13,7 @@ def train():
     N_GPUS = 1
     N_DEVICES = 1
     EPOCHS = 100
-    
+   
     config_path = "./configs/quartznet15x5.yaml"
     yaml = YAML(typ='safe')
     with open(config_path) as f:
@@ -59,7 +59,7 @@ def train():
         prefix='',
         period=1
     )
-    # DDP for multi gpu
+    
     trainer = pl.Trainer(gpus=N_GPUS, accelerator='ddp',num_nodes=N_DEVICES,
                          max_epochs=EPOCHS, amp_level='O1', precision=16,
                          logger=wandb_logger, log_every_n_steps=150,
