@@ -14,7 +14,7 @@ def train():
     N_DEVICES = 1
     EPOCHS = 100
     
-    config_path = "./configs/quartznet5x5.yaml"
+    config_path = "./configs/quartznet15x5.yaml"
     yaml = YAML(typ='safe')
     with open(config_path) as f:
         params = yaml.load(f)
@@ -46,10 +46,10 @@ def train():
     # assign optimizer config
     first_asr_model.setup_optimization(optim_config=DictConfig(new_opt))
 
-    wandb_logger = WandbLogger(name="Quartznet5x5", project="TURKISH_FINETUNING")
+    wandb_logger = WandbLogger(name="Quartznet15x5", project="TURKISH_FINETUNING")
 
     # used for saving models
-    save_path = os.path.join(os.getcwd(),"TURKISH_FINETUNING" + "_" + "Quartznet5x5_models")
+    save_path = os.path.join(os.getcwd(),"TURKISH_FINETUNING" + "_" + "Quartznet15x5_models")
     checkpoint_callback = ModelCheckpoint(
         dirpath=save_path,
         save_top_k= -1,
