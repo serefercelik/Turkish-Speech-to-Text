@@ -7,8 +7,7 @@ from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
 import os
 
-
-def train():
+def finetuning():
 
     N_GPUS = 1
     N_DEVICES = 1
@@ -71,4 +70,4 @@ def train():
 
 
 if __name__ == '__main__':
-    train()
+    finetuning()
