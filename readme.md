@@ -33,9 +33,14 @@ python fine_tune.py
 ```
 export_model.ipynb
 ```
-### Deploy model and make inference
+### Deploy model and inference
 Run the following command:
 ```
-stt_inferencer.py
+python stt_inferencer.py
 ```
+### Evaluate model with Word Error Rate (WER)
+```
+evaluate_model.ipynb
+```
+
 
