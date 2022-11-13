@@ -1,1 +1,1 @@
-checkpoints will be saved here.
+Model checkpoints will be saved here.
