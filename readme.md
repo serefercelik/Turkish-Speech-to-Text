@@ -30,12 +30,11 @@ Run the following command:
 python fine_tune.py
 ```
 ### Export onnx model to Inference
-`ONNX Runtime` is a high-performance inference engine for deploying ONNX models to production.
 ```
 export_model.ipynb
 ```
 ### Deploy onnx model and inference
-`onnxruntime.InferenceSession(model)`
+`onnxruntime.InferenceSession(model)` is used for high-performance inference.
 Run the following command:
 ```
 python stt_inferencer.py
