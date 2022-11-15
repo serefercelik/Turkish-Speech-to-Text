@@ -35,7 +35,6 @@ export_model.ipynb
 ```
 ### Deploy onnx model and inference
 `onnxruntime.InferenceSession(model)` is used for high-performance inference.
-Run the following command:
 ```
 python stt_inferencer.py
 ```
