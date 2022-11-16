@@ -34,7 +34,9 @@ python fine_tune.py
 export_model.ipynb
 ```
 ### Deploy onnx model and inference
-`onnxruntime.InferenceSession(model)` is used for high-performance inference.
+ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP) framework to optimally execute the ONNX models on the hardware platform. 
+
+`onnxruntime.InferenceSession(model, providers=['CPUExecutionProvider'])`
 ```
 python stt_inferencer.py
 ```
