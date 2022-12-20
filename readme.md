@@ -46,8 +46,7 @@ export_model.ipynb
 ```
 ### Inference
 ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP) framework to optimally execute the ONNX models on the hardware platform. 
-
-`onnxruntime.InferenceSession(model, providers=['CPUExecutionProvider'])`
+To find the best performance and apply performance-tuning for your model and hardware with [ONNX Runtime](https://onnxruntime.ai/docs/performance/tune-performance.html).
 ```
 python stt_inferencer.py
 ```
