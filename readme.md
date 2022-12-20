@@ -1,6 +1,17 @@
 ## Turkish Text-to-Speech
 
-### Preparing Custom ASR Data
+## Table Of Contents
+- [Custom ASR Data Preperation](#Custom-ASR-Data-Preperation)
+- [Download Free Audio Data for ASR](#Download-Free-Audio-Data-for-ASR)
+- [Speech Data Augmentation](#Speech Data Augmentation)
+- [Dataset Configuration](#Dataset-Configuration)
+- [Training](#Training)
+- [Export to ONNX Model](#Export-to-ONNX-Model)
+- [Inference](#Inference)
+- [Evaluation with Word Error Rate (WER)](#Evaluation-with-Word-Error-Rate-(WER))
+
+
+### Custom ASR Data Preperation
 The `nemo_asr` collection expects each dataset to consist of a set of utterances in individual audio files plus a manifest that describes the dataset, with information about one utterance per line `(.json)`.
 Each line of the manifest `(data/train_manifest.jsonl and data/val_manifest.jsonl)` should be in the following format:
 ```
@@ -15,7 +26,7 @@ You can download and create `manifest.jsonl` from some of the common publically 
 Also, you can use my repository [
 speech-data-augmentation](https://github.com/Rumeysakeskin/speech-data-augmentation) to **increase the diversity** of your dataset augmenting the data artificially for ASR models training.
 
-### Preprocessing
+### Dataset Configuration
 - [QuartzNet 15x5 model config file](https://catalog.ngc.nvidia.com/orgs/nvidia/models/quartznet_15x5_ls_sp/files) was used that trained only on LibriSpeech.
 Turkish labels were configured in `configs/quartznet15x5.yaml` in the following format:
 ```
@@ -29,18 +40,18 @@ Run the following command:
 ```
 python fine_tune.py
 ```
-### Export onnx model to Inference
+### Export to ONNX Model
 ```
 export_model.ipynb
 ```
-### Deploy onnx model and inference
+### Inference
 ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP) framework to optimally execute the ONNX models on the hardware platform. 
 
 `onnxruntime.InferenceSession(model, providers=['CPUExecutionProvider'])`
 ```
 python stt_inferencer.py
 ```
-### Evaluate model with Word Error Rate (WER)
+### Evaluation with Word Error Rate (WER)
 ```
 evaluate_model.ipynb
 ```
