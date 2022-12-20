@@ -1,6 +1,6 @@
 ## Turkish Text-to-Speech
 
-## Table Of Contents
+### Table Of Contents
 - [Custom ASR Data Preperation](#Custom-ASR-Data-Preperation)
 - [Download Free Audio Data for ASR](#Download-Free-Audio-Data-for-ASR)
 - [Speech Data Augmentation](#Speech-Data-Augmentation)
