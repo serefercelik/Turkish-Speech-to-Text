@@ -5,7 +5,6 @@ import numpy as np
 from nemo.collections.asr.models.ctc_models import EncDecCTCModel
 import onnxruntime
 from nemo.collections.asr.metrics import wer
-from util import softmax, get_nemo_dataset
 import tempfile
 import os
 import json
@@ -52,6 +51,49 @@ class QuartznetInferencer():
             dist_sync_on_step=True,
         )
 
+    def get_nemo_dataset(self, config, vocab, sample_rate=16000):
+        augmentor = None
+
+        config = {
+            'manifest_filepath': os.path.join(config['temp_dir'], 'manifest.json'),
+            'sample_rate': sample_rate,
+            'labels': vocab,
+            'batch_size': min(config['batch_size'], len(config['paths2audio_files'])),
+            'trim_silence': True,
+            'shuffle': False,
+        }
+
+        dataset = AudioToCharDataset(
+            manifest_filepath=config['manifest_filepath'],
+            labels=config['labels'],
+            sample_rate=config['sample_rate'],
+            int_values=config.get('int_values', False),
+            augmentor=augmentor,
+            max_duration=config.get('max_duration', None),
+            min_duration=config.get('min_duration', None),
+            max_utts=config.get('max_utts', 0),
+            blank_index=config.get('blank_index', -1),
+            unk_index=config.get('unk_index', -1),
+            normalize=config.get('normalize_transcripts', False),
+            trim=config.get('trim_silence', True),
+            parser=config.get('parser', 'en'),
+
+            ## These args are not available in in the newer NEMO version ##
+            # load_audio=config.get('load_audio', True),
+            # add_misc=config.get('add_misc', False),
+        )
+
+        return torch.utils.data.DataLoader(
+            dataset=dataset,
+            batch_size=config['batch_size'],
+            collate_fn=dataset.collate_fn,
+            drop_last=config.get('drop_last', False),
+            shuffle=True,
+            num_workers=config.get('num_workers', 0),
+            pin_memory=config.get('pin_memory', False),
+        )
+
+
     def inference(self):
 
         files = [self.inference_file_location]
@@ -71,7 +113,7 @@ class QuartznetInferencer():
                     fp.write(json.dumps(entry) + '\n')
             out_batch = []
             config = {'paths2audio_files': files, 'batch_size': 1, 'temp_dir': dataloader_tmpdir}
-            temporary_datalayer = get_nemo_dataset(config, self.params["labels"], 16000)
+            temporary_datalayer = self.get_nemo_dataset(config, self.params["labels"], 16000)
             for test_batch in temporary_datalayer:
                 out_batch.append(test_batch)
 
