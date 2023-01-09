@@ -4,9 +4,8 @@
 - [Custom ASR Data Preperation](#Custom-ASR-Data-Preperation)
 - [Download Free Audio Data for ASR](#Download-Free-Audio-Data-for-ASR)
 - [Speech Data Augmentation](#Speech-Data-Augmentation)
-- [Character Encoding CTC Model](#Character-Encoding-CTC-Model)
 - [Dataset Configuration](#Dataset-Configuration)
-- [Training](#Training)
+- [Transfer Learning](#Transfer-Learning)
 - [Export to ONNX Model](#Export-to-ONNX-Model)
 - [Inference](#Inference)
 - [Evaluation with Word Error Rate (WER)](#Evaluation-with-Word-Error-Rate-(WER))
@@ -27,11 +26,6 @@ You can download and create `manifest.jsonl` from some of the common publically 
 Also, you can use my repository [
 speech-data-augmentation](https://github.com/Rumeysakeskin/speech-data-augmentation) to **increase the diversity** of your dataset augmenting the data artificially for ASR models training.
 
-### Character Encoding CTC Model
-The following section will detail how we prepare a CTC model which utilizes a Character Encoding scheme.
-This section will utilize a pre-trained [QuartzNet 15x5](https://arxiv.org/abs/1910.10261), which has been trained on roughly 7,000 hours of English speech base model.
-
-
 ### Dataset Configuration
 - [QuartzNet 15x5 model config file](https://catalog.ngc.nvidia.com/orgs/nvidia/models/quartznet_15x5_ls_sp/files) was used that trained only on LibriSpeech.
 Turkish labels were configured in `configs/quartznet15x5.yaml` in the following format:
@@ -41,7 +35,7 @@ labels: &labels [" ", "a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", 
 ```
 - Turkish model checkpoint `(pretrained_turkish_model/epoch-99.ckpt)` was used for fine-tuning.
 
-### Training
+### Transfer Learning
 Run the following command:
 ```
 python fine_tune.py
