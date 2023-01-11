@@ -36,6 +36,12 @@ labels: &labels [" ", "a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", 
 - Turkish model checkpoint `(pretrained_turkish_model/epoch-99.ckpt)` was used for fine-tuning.
 
 ### Transfer Learning
+ QuartzNet15x5 Parameters | QuartzNet15x5 Pre-Trained Parameters |
+ ------- | ------- |
+<img src="quartznet15x5_params.png" width="300" height="126"> |  <img src="quartznet15x5_transfer_learning_params.png" width="300" height="126"> |
+
+
+
 Run the following command:
 ```
 python fine_tune.py
