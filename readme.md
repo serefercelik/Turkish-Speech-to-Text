@@ -38,7 +38,7 @@ labels: &labels [" ", "a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", 
 ### Transfer Learning
  Pretrained QuartzNet15x5 Parameters | Transfer-learning QuartzNet15x5 Parameters |
  ------- | ------- |
-<img src="quartznet15x5_params.png" width="300" height="126"> |  <img src="quartznet15x5_transfer_learning_params.png" width="300" height="126"> |
+<img src="quartznet15x5_params.png" width="350" height="145"> |  <img src="quartznet15x5_transfer_learning_params.png" width="350" height="145"> |
 
 
 
