@@ -10,7 +10,7 @@ In this repository, we will see how to perform training from scratch and fine-tu
 - [Specify Model YAML Configuration](#Specify-Model-YAML-Configuration)
 - [Training from Scratch (Transfer Learning from English to Turkish)](#Training-from-Scratch-(Transfer-Learning-from-English-to-Turkish))
 - [Fine-tuning for Pretrained Turkish Model](#Fine-tuning-for-Pretrained-Turkish-Model)
-- [Convert the PyTorch model to ONNX](#Convert-the PyTorch-model-to-ONNX)
+- [Convert the PyTorch model to ONNX](#Convert-the-PyTorch-model-to-ONNX)
 - [Inference](#Inference)
 - [Evaluation with Word Error Rate (WER)](#Evaluation-with-Word-Error-Rate-(WER))
 
