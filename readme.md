@@ -10,7 +10,7 @@ In this repository, we will see how to perform training from scratch and fine-tu
 - [Specify Model YAML Configuration](#Specify-Model-YAML-Configuration)
 - [Training from Scratch (Transfer Learning from English to Turkish)](#Training-from-Scratch-(Transfer-Learning-from-English-to-Turkish))
 - [Fine-tuning for Pretrained Turkish Model](#Fine-tuning-for-Pretrained-Turkish-Model)
-- [Export to ONNX Model](#Export-to-ONNX-Model)
+- [Convert the PyTorch model to ONNX](#Convert-the PyTorch-model-to-ONNX)
 - [Inference](#Inference)
 - [Evaluation with Word Error Rate (WER)](#Evaluation-with-Word-Error-Rate-(WER))
 
@@ -86,10 +86,12 @@ python fine_tune.py
  ------- | ------- |
 <img src="QuartzNet_params_pretrained_English.png" width="350" height="145"> |  <img src="quartznet15x5_transfer_learning_params.png" width="350" height="145"> |
 
-### Export to ONNX Model
+### Convert the PyTorch model to ONNX
+To convert the resulting model you need to `torch.onnx.export`, run the following jupyter notebook to export onnx model.
 ```
 export_model.ipynb
 ```
+
 ### Inference
 ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP) framework to optimally execute the ONNX models on the hardware platform. 
 To find the best performance and apply performance-tuning for your model and hardware with [ONNX Runtime](https://onnxruntime.ai/docs/performance/tune-performance.html).
