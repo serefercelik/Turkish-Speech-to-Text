@@ -63,8 +63,7 @@ python fine_tune.py
 
  Pretrained QuartzNet15x5 Parameters | Transfer-learning QuartzNet15x5 Parameters |
  ------- | ------- |
-<img src="quartznet15x5_params.png" width="350" height="145"> |  <img src="quartznet15x5_transfer_learning_params.png" width="350" height="145"> |
-
+<img src="QuartzNet_params_pretrained_English.png" width="350" height="145"> |  <img src="quartznet15x5_transfer_learning_params.png" width="350" height="145"> |
 
 ### Export to ONNX Model
 ```
@@ -80,5 +79,9 @@ python stt_inferencer.py
 ```
 evaluate_model.ipynb
 ```
+
+ Transfer Learning Model Size | Fine Tuning Model Size | Onnx Model Size |
+ ------- | ------- |------- |
+53 MB |   |   |
 
 
