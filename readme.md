@@ -103,8 +103,3 @@ python stt_inferencer.py
 evaluate_model.ipynb
 ```
 
- Transfer Learning Model Size | Fine Tuning Model Size | Onnx Model Size |
- ------- | ------- |------- |
-53 MB |   |   |
-
-
