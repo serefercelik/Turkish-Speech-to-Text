@@ -23,10 +23,12 @@ Because the model initialized with English checkpoints trains faster (training l
 You can download and create `manifest.jsonl` from some of the common publically available speech dataset for **many languages** from my repository [speech-datasets-for-ASR](https://github.com/Rumeysakeskin/speech-datasets-for-ASR).
 
 After the data is downloaded, pre-process it. Convert MP3 files into WAV files with a 16kHz sampling rate to match the sampling rate of the QuartzNet model training data.
+
 ---
 ### Speech Data Augmentation
 Also, you can use my repository [
 speech-data-augmentation](https://github.com/Rumeysakeskin/speech-data-augmentation) to **increase the diversity** of your dataset augmenting the data artificially for ASR models training.
+
 ---
 ### Create Custom ASR Data Manifest
 We need to do now is to create manifests for our training and evaluation data, which will contain the metadata of our audio files.
@@ -85,12 +87,14 @@ python fine_tune.py
  Pretrained QuartzNet15x5 Parameters | Transfer-learning QuartzNet15x5 Parameters |
  ------- | ------- |
 <img src="QuartzNet_params_pretrained_English.png" width="350" height="145"> |  <img src="quartznet15x5_transfer_learning_params.png" width="350" height="145"> |
+
 ---
 ### Convert the PyTorch model to ONNX
 To convert the resulting model you need to `torch.onnx.export`, run the following jupyter notebook to export onnx model.
 ```python
 export_model.ipynb
 ```
+
 ---
 ### Inference
 ONNX Runtime works with different hardware acceleration libraries through its extensible Execution Providers (EP) framework to optimally execute the ONNX models on the hardware platform. 
@@ -98,6 +102,7 @@ To find the best performance and apply performance-tuning for your model and har
 ```python
 python stt_inferencer.py
 ```
+
 ---
 ### Evaluation with Word Error Rate (WER)
 ```python
