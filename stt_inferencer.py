@@ -3,6 +3,7 @@ from ruamel.yaml import YAML
 from omegaconf import DictConfig
 import numpy as np
 from nemo.collections.asr.models.ctc_models import EncDecCTCModel
+from nemo.collections.asr.data.audio_to_text import AudioToCharDataset
 import onnxruntime
 from nemo.collections.asr.metrics import wer
 import tempfile
