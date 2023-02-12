@@ -1,4 +1,4 @@
-# Training from Scratch and Fine-tuning for Automatic Speech Recognition (Speech to Text) on low-resource languages
+## Training from Scratch and Fine-tuning for Automatic Speech Recognition (Speech to Text) on low-resource languages
 
 In this repository, we will see how to perform training from scratch and fine-tuning for automatic speech recognition (ASR) for many languages.
 
