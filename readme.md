@@ -84,10 +84,6 @@ Run the following command:
 python fine_tune.py
 ```
 
- Pretrained QuartzNet15x5 Parameters | Transfer-learning QuartzNet15x5 Parameters |
- ------- | ------- |
-<img src="QuartzNet_params_pretrained_English.png" width="350" height="145"> |  <img src="quartznet15x5_transfer_learning_params.png" width="350" height="145"> |
-
 ---
 ### Convert the PyTorch model to ONNX
 To convert the resulting model you need to `torch.onnx.export`, run the following jupyter notebook to export onnx model.
